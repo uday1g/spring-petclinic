@@ -8,7 +8,7 @@ pipeline{
         cron('H */4 * * 1-5')
     }
     tools {
-        JDK "JAVA-17" 
+        tool name: 'JAVA-17', type: 'jdk'
     }
 
 
