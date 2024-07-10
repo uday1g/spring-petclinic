@@ -5,10 +5,10 @@ pipeline{
     }
 
     triggers {
-        cron('H */4 * * 1-5')
+        pollSCM('H */4 * * 1-5')
     }
     tools {
-        tool name: 'JAVA-17', type: 'jdk'
+        jdk 'JAVA-17'
     }
 
 
