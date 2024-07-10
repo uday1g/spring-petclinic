@@ -23,5 +23,12 @@ pipeline{
                 sh 'mvn package'
             }
         }
+        stage ('reporting'){
+            steps{
+                archiveArtifacts artifacts: '**/target/*.jar', followSymlinks: false
+                junit stdioRetention: '', testResults: '**/target/surefire-reports/*.xml'   
+
+            }
+        }
     }
 }
