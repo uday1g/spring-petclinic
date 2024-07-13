@@ -32,4 +32,17 @@ pipeline{
             }
         }
     }
+    post {
+        success {
+            mail subject: '${JOB_NAME}: has completed with success',
+                 body: 'your project is effective \n Build Url ${BUILD_URL}',
+                 to: 'udaytest.com'
+        }
+        failure {
+            mail subject: '${JOB_NAME}:: has completed with failed',
+                 body: 'your project is defective \n Build Url ${BUILD_URL}',
+                 to: 'udaytest.com'
+        }
+    }
+	
 }
